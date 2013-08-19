@@ -4,7 +4,6 @@ end
 
 
 get '/:username' do
-  @user = User.find_by_screen_name(params[:username])
-  @tweets = @user.tweets
+  @user = User.find_or_create_by_screen_name(params[:username])
   erb :user
 end
