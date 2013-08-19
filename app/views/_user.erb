@@ -1,0 +1,8 @@
+<div class='container'>
+  <h1>Tweets for <%= @user.screen_name %></h1>
+  <ul>
+    <% @user.tweets.each do |tweet| %>
+      <li><%= tweet.text %> || <%= tweet.tweeted_at %></li>
+    <% end %>
+  </ul>
+</div>
