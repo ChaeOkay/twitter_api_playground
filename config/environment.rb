@@ -35,7 +35,7 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
 
-client = Twitter::REST::Client.new do |config|
+Client = Twitter::REST::Client.new do |config|
   config.consumer_key = YOUR_APP_CONSUMER_KEY
   config.consumer_secret = YOUR_APP_CONSUMER_SECRET
   config.access_token = A_USER_ACCESS_TOKEN
