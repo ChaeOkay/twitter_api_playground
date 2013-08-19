@@ -1,7 +1,20 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $('form').on('submit', function(e){
+    e.preventDefault();
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+    $('div.tweets').html('<img src="spinner.gif">')
+    
+    var username = $(this).serialize();
+
+
+    $.ajax({
+      url:  this.action,
+      type: this.method,
+      data: username
+    }).done(function(data){
+
+      $('div.tweets').html(data);
+
+    });
+  });
 });
